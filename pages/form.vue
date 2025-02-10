@@ -2,21 +2,21 @@
     <div class="flex flex-col gap-6 w-full sm:w-auto p-5">
         <div class="flex flex-col sm:flex-row sm:items-center gap-6">
             <div class="flex-auto">
-                <label for="firstname" class="block font-semibold mb-2">Firstname</label>
+                <label for="firstname" class="block font-normal mb-2">Firstname</label>
                 <InputText id="firstname" class="w-full" />
             </div>
             <div class="flex-auto">
-                <label for="lastname" class="block font-semibold mb-2">Lastname</label>
+                <label for="lastname" class="block font-normal mb-2">Lastname</label>
                 <InputText id="lastname" class="w-full" />
             </div>
         </div>
         <div class="flex flex-col sm:flex-row sm:items-center gap-6">
             <div class="flex-1">
-                <label for="date" class="block font-semibold mb-2">Date</label>
+                <label for="date" class="block font-normal mb-2">Date</label>
                 <DatePicker inputId="date" class="w-full" />
             </div>
             <div class="flex-1">
-                <label for="country" class="block font-semibold mb-2">Country</label>
+                <label for="country" class="block font-normal mb-2">Country</label>
                 <Select inputId="country" optionLabel="name" placeholder="Select a Country" class="w-full">
                     <template #value="slotProps">
                         <div v-if="slotProps.value" class="flex items-center">
@@ -37,7 +37,7 @@
             </div>
         </div>
         <div class="flex-auto">
-            <label for="message" class="block font-semibold mb-2">Message</label>
+            <label for="message" class="block font-normal mb-2">Message</label>
             <Textarea id="message" class="w-full" rows="4" />
         </div>
     </div>
@@ -51,6 +51,10 @@
 <script setup lang="ts">
 import { useToast } from 'primevue/usetoast';
 const toast = useToast();
+
+definePageMeta({
+    layout: 'dashboard'
+});
 
 const show = () => {
     toast.add({ severity: 'info', summary: 'Info', detail: 'Message Content', life: 3000 });
