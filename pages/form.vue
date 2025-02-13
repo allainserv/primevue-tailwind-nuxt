@@ -53,7 +53,7 @@ import { useToast } from 'primevue/usetoast';
 const toast = useToast();
 
 definePageMeta({
-    layout: 'dashboard'
+    layout: 'dashboard2'
 });
 
 const show = () => {
